@@ -1,12 +1,12 @@
 class Person {
-    //burda nesnenin Person'u kullanınca nelerden oluşacağını bildirdik. isim ve yaş
-    constructor(isim, yas) {
-        this.isim = isim;
-        this.yas = yas
+    //burda nesnenin Person'u kullanınca nelerden oluşacağını bildirdik. name ve age
+    constructor(name, age) {
+        this.name = name;
+        this.age = age
     }
 
-    bilgiler() {
-        console.log(`Merhaba, benim adım ${this.isim} ve ben ${this.yas} yaşındayım.`)
+    introduce() {
+        console.log(`Merhaba, benim adım ${this.name} ve ben ${this.age} yaşındayım.`)
     }
 }
 
@@ -18,9 +18,9 @@ class Person {
 
 const person1 = new Person('akif', 24);
 
-// artık person1 içinde 24 yaşında, ismi akif olan bir nesne var. bu nesnenin içinde ayrıca kullanabileceğin bir bilgiler fonksiyonu var.
+// artık person1 içinde 24 yaşında, ismi akif olan bir nesne var. bu nesnenin içinde ayrıca kullanabileceğin bir introduce fonksiyonu var.
 
-// person1.bilgiler();
+// person1.introduce();
 
 // Merhaba, benim adım akif ve ben 24 yaşındayım. yazıyor konsola
 
@@ -35,16 +35,16 @@ const person1 = new Person('akif', 24);
 
 // Bu örnekte, Student sınıfı, Person sınıfını genişletir. 
 class Student extends Person {
-    constructor(isim, yas, grade) {
+    constructor(name, age, grade) {
       // Üst sınıfın kurucu metodunu çağırma
-      super(isim, yas);
+      super(name, age);
       //   super anahtar kelimesi, üst sınıfın kurucu metodunu çağırmak için kullanılır. 
       this.grade = grade;
     }
   
     // Yeni bir metot ekleme
     displayGrade() {
-      console.log(`${this.isim} adlı öğrencinin notu: ${this.grade}`);
+      console.log(`${this.name} adlı öğrencinin notu: ${this.grade}`);
     }
   }
   
@@ -52,7 +52,7 @@ class Student extends Person {
   const student1 = new Student('akif', 24, 'A');
   
   // Üst sınıftan miras aldığı metotları çağırma üst sınıfın özelliklerinin alayına eriştin. hll
-  student1.bilgiler(); // Merhaba, benim adım akif ve ben 24 yaşındayım. yazıyor konsola
+  student1.introduce(); // Merhaba, benim adım akif ve ben 24 yaşındayım. yazıyor konsola
   
   // Yeni metodu çağırma
   student1.displayGrade(); // Mehmet adlı öğrencinin notu: A yazıyor konsola
