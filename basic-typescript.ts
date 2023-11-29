@@ -80,15 +80,17 @@ person1.showInfos();
 console.log(person1.name);
 
 //inherits
-//kalıtım
+//miras
 //extends Person deyince bütün person özelliklerini miras aldık
 class Employee extends Person {
     //ek özellil ekleyebiliriz
     salary: number;
+    department: string;
     //burda gönderdiğim name age ve phone miras aldığımıza eşitlenecek ve değerlerini alacak
-    constructor(name: string, age: number, phone: string, salary: number) {
+    constructor(name: string, age: number, phone: string, salary: number, department: string) {
         super(name, age, phone);
         this.salary = salary;
+        this.department = department;
 
     }
     //salary için showinfos yeniden yazıyoruz
@@ -100,11 +102,11 @@ class Employee extends Person {
     }
     changeDepartment() {
 
-        console.log("department changed");
+        console.log("department changed", this.department);
     }
 }
 //objemizi oluşturduk
-let employee1 = new Employee("akif komurcu", 22, "12345", 4000);
+let employee1 = new Employee("akif komurcu", 24, "12345", 545646654645646565, 'HaCkErMaN');
 
 employee1.showInfos();
 
